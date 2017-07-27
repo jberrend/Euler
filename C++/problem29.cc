@@ -15,8 +15,8 @@ int main() {
         }
     }
     auto finished = std::chrono::high_resolution_clock::now();
-    auto millis = std::chrono::duration_cast<std::chrono::milliseconds>(finished - started).count();
-    printf("Answer: %i\n", nums.size());
-    printf ("Time taken: %ims\n", millis);
+    int millis = std::chrono::duration_cast<std::chrono::milliseconds>(finished - started).count();
+    printf("Answer: %i\n", (int) nums.size());
+    printf("Time taken: %ims\n", millis);
     return 0;
 }
