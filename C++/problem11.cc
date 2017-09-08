@@ -1,6 +1,7 @@
 #include <vector>
 #include <iostream>
 #include <fstream>
+#include "solution.h"
 
 // easier way to access an element of the grid (also templates)
 template <typename T>
@@ -8,7 +9,7 @@ T gridElement(std::vector<std::vector<T>*> vec, int i, int j) {
     return vec.at(i)->at(j);
 }
 
-int main() {
+double executeSolution() {
 
     // define the grid that the numbers will be stored in
     std::vector<std::vector<int>*> grid(20);
@@ -56,13 +57,10 @@ int main() {
         }
     }
 
-    std::cout << "Answer: " << largest_product << std::endl;
-    std::cout << gridElement(grid, 19, 19) << std::endl;
-
     // clear that heap memory
     for (int i = 0; i < 20; i++) {
         delete grid[i];
     }
 
-    return 0;
+    return (double) largest_product;
 }
