@@ -2,7 +2,8 @@
 #include <math.h>
 #include <chrono>
 #include <unordered_set>
-
+#include "solution.h"
+/*
 int main() {
     // benchmark the algorithm
     auto started = std::chrono::high_resolution_clock::now();
@@ -15,8 +16,21 @@ int main() {
         }
     }
     auto finished = std::chrono::high_resolution_clock::now();
-    auto millis = std::chrono::duration_cast<std::chrono::milliseconds>(finished - started).count();
-    printf("Answer: %i\n", nums.size());
-    printf ("Time taken: %ims\n", millis);
+    int millis = std::chrono::duration_cast<std::chrono::milliseconds>(finished - started).count();
+    printf("Answer: %i\n", (int) nums.size());
+    printf("Time taken: %ims\n", millis);
     return 0;
+}
+*/
+
+double executeSolution() {
+    std::unordered_set<double> nums;
+    nums.reserve(10000);
+
+    for(int i = 2; i <= 100; i++) {
+        for (int j = 2; j <= 100; j++) {
+            nums.insert(pow(i, j));
+        }
+    }
+    return (double) nums.size();
 }
