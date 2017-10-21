@@ -24,6 +24,8 @@ namespace Euler
         public static void Main(string[] args)
         {
             Run(new Problem29());
+            Console.ReadKey();
+
         }
 
     }
