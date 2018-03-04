@@ -3,4 +3,4 @@ module Main where
 import Euler
 
 main :: IO ()
-main = print problem21
+main = print problem16
