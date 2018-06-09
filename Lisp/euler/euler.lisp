@@ -23,3 +23,13 @@
 
 (defun square (x)
   (expt x 2))
+
+(defun problem9-iterative ()
+  (loop for a from 1 to 1000
+        do (loop for b from a to 1000
+                 do (progn
+                      (setf c-real (sqrt (+ (expt a 2) (expt b 2))))
+                      (when (= c-real (floor c-real))
+                        (setf c (floor c-real))
+                        (when (= 1000 (+ a b c))
+                          (return-from problem9-iterative (* a b c))))))))
